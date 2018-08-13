@@ -39,3 +39,7 @@
   margin-left: auto;
   margin-top: 100px;
 }
+
+.tile-viewport {
+  width: 200px;
+}
