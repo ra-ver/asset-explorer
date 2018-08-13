@@ -1,12 +1,17 @@
 {
-  "name": "hcmi-assets",
-  "version": "1.0.0",
-  "description": "HCMI assets",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf index.html && ./create-index.sh"
+  "name": "assets",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-grid-gallery": "^0.5.1",
+    "react-scripts": "1.1.4"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rm -rf src/images.json && ./create-index.sh && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }

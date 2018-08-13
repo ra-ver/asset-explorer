@@ -1,13 +1,13 @@
 #!/bin/bash
 
 ROOT=./public
-HTTP="./"
-OUTPUT="index.html" 
+HTTP="/"
+OUTPUT="src/images.json"
 
 i=0
-echo "<UL>" > $OUTPUT
-  for i in `find "$ROOT" -maxdepth 1 -mindepth 1 -type f| sort`; do
+echo "[" > $OUTPUT
+for i in `find "$ROOT" -maxdepth 1 -mindepth 1 -type f -iname '*.svg'| sort`; do
     file=`basename "$i"`
-    echo "    <LI><img src=\"$i\" width=\"50\" height=\"50\">  $file</img></LI>" >> $OUTPUT
-  done
-echo "</UL>" >> $OUTPUT
+    echo "{ \"src\":\"$HTTP$file\", \"thumbnail\":\"$HTTP$file\", \"thumbnailWidth\": 50, \"thumbnailHeight\":50, \"caption\":\"$file\", \"tags\":[{\"value\":\"$file\", \"title\":\"$file\"}] }," >> $OUTPUT
+done
+echo "{ \"src\":\"$HTTP$file\", \"thumbnail\":\"$HTTP$file\", \"thumbnailWidth\": 50, \"thumbnailHeight\":50, \"caption\":\"$file\", \"tags\":[{\"value\":\"$file\", \"title\":\"$file\"}] }]" >> $OUTPUT
