@@ -32,12 +32,13 @@
 }
 
 #root {
-  width: 1200px;
+  width: 95%;
   height: 100%;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
   margin-top: 100px;
+  background-color: darkgray;
 }
 
 .tile-viewport {

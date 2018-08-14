@@ -5,13 +5,14 @@ import images from './images.json'
 import './App.css'
 
 function myTileViewportStyleFn() {
-  return {width: "170px", margin: "auto"};
+  return {display: "inline", width: "185px", marginLeft: "15px", marginRight: "auto"};
 }
 const App = () => render(
   <Gallery
   images={images}
   margin={20}
   rowheight={170}
+  enableImageSelection={false}
   tileViewportStyle={myTileViewportStyleFn}/>, document.getElementById('root'));
 
 export default App;
